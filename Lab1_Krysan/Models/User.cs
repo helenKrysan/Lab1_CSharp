@@ -8,6 +8,10 @@ namespace Lab1_Krysan.Models
 
         public User(DateTime dateOfBirth)
         {
+            if (DateTime.Now < dateOfBirth)
+            {
+                throw new Exception();
+            }
             _dateOfBirth = dateOfBirth;
         }
 

@@ -71,12 +71,12 @@ namespace Lab1_Krysan.ViewModels
             User user = null;
             await Task.Run(() =>
             {
-                user = new User(_date);
                 try
                 {
-                    Age = user.CountAge().ToString();
-                    AstrologicalSign = user.DeterminateSign();
-                    ChineaseAstrologicalSign = user.DeterminateChineaseSign();
+                    user = new User(_date);
+                    Age ="Age : " + user.CountAge().ToString();
+                    AstrologicalSign = "Astrological Sign : " + user.DeterminateSign();
+                    ChineaseAstrologicalSign = "Chinease Astrological Sign : " + user.DeterminateChineaseSign();
                 }
                 catch (Exception e)
                 {
@@ -90,6 +90,7 @@ namespace Lab1_Krysan.ViewModels
             }
             LoaderManager.Instance.HideLoader();
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
