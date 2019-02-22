@@ -84,6 +84,10 @@ namespace Lab1_Krysan.ViewModels
                 }
             }
             );
+            if (_date == DateTime.Now)
+            {
+                MessageBox.Show("Happy BirthDay!!!");
+            }
             LoaderManager.Instance.HideLoader();
         }
 
