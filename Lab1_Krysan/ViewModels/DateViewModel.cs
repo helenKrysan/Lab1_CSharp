@@ -84,7 +84,7 @@ namespace Lab1_Krysan.ViewModels
                 }
             }
             );
-            if (_date == DateTime.Now)
+            if (user!= null && user.IsBirthDay())
             {
                 MessageBox.Show("Happy BirthDay!!!");
             }
