@@ -26,6 +26,10 @@ namespace Lab1_Krysan.ViewModels
 
             set
             {
+                if (this._date == value)
+                {
+                    return;
+                }
                 _date = value;
                 CountAgeAndSign();
                 OnPropertyChanged();
@@ -69,6 +73,7 @@ namespace Lab1_Krysan.ViewModels
         {
             LoaderManager.Instance.ShowLoader();
             User user = null;
+            bool isError = false;
             await Task.Run(() =>
             {
                 try
@@ -80,10 +85,14 @@ namespace Lab1_Krysan.ViewModels
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Input date is invalid");
+                    isError = true;
                 }
             }
             );
+            if (isError)
+            {
+                MessageBox.Show("Input date is invalid");
+            }
             if (user!= null && user.IsBirthDay())
             {
                 MessageBox.Show("Happy BirthDay!!!");

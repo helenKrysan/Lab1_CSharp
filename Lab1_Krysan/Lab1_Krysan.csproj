@@ -60,7 +60,6 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Tools\ILoaderOwner.cs" />
     <Compile Include="Tools\Managers\LoaderManager.cs" />
-    <Compile Include="Tools\RelayCommand.cs" />
     <Compile Include="ViewModels\DateViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\DateControl.xaml.cs">
