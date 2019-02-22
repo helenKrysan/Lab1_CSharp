@@ -159,6 +159,7 @@ namespace Lab1_Krysan.Models
         public string DeterminateChineaseSign()
         {
             int year = Math.Abs(2008 - _dateOfBirth.Year) % 12;
+            if (2008 - _dateOfBirth.Year > 0) year = 12 - year;
             string sign = "";
             switch (year)
             {
